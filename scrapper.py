@@ -3,7 +3,7 @@ import requests, json, shutil
 finalId = 18000 #17268
 
 waifus = [] #json.loads(open("waifus.json", 'r').read())
-for waifuId in range(1510, finalId):
+for waifuId in range(1, finalId):
     try:
         r=requests.get("https://mywaifulist.moe/api/waifu/"+str(waifuId), headers={'x-requested-with': 'XMLHttpRequest'})
         if (r.text!=""):
