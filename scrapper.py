@@ -19,5 +19,7 @@ for waifuId in range(1, finalId):
             waifu["display_picture"]=imageURL
             waifus.append(waifu)
             open("waifus.json", "w+").write(json.dumps(waifus))
+        else:
+            open("missing.txt", 'a').write(str(waifuId)+'\n')
     except:
         open("error.txt", 'a').write(str(waifuId)+'\n')
