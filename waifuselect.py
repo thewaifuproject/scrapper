@@ -1,6 +1,6 @@
 import json, os
 
-waifus2select=400
+waifus2select=450
 
 waifus = json.loads(open("waifus.json").read())
 
@@ -10,4 +10,4 @@ open("final/waifus.json", "w+").write(json.dumps(waifus))
 
 for w in waifus:
     imageName=str(w["id"])
-    os.system("mv images/"+imageName+" ../server/image/"+imageName)
+    os.system("cp images/"+imageName+" ../server/image/"+imageName)
