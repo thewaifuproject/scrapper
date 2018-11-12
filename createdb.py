@@ -134,7 +134,7 @@ try:
     cursor.execute("CREATE DATABASE IF NOT EXISTS "+dbName)
     cursor.execute("USE "+dbName)
 
-    with open('waifus.json') as json_data:
+    with open('final/waifus.json') as json_data:
         rows = json.load(json_data)
     
     cursor.execute(createDb2Query(rows[0], 'waifus'))
