@@ -1,4 +1,4 @@
-import json, os, sha3
+import json, os, sha3, random
 
 def keccak256(k):
     return int(sha3.keccak_256(k.encode()).hexdigest(), 16)
@@ -9,8 +9,9 @@ waifus = json.loads(open("waifus.json").read())
 
 waifus=sorted(waifus, key=lambda w: w["likes"]+w["trash"])[-waifus2select:]
 
-os.system("rm ../server/image/*")
+waifus=random.shuffle(waifus)
 
+os.system("rm ../server/image/*")
 for i, w in enumerate(waifus):
     newId=keccak256(w["name"])
     os.system("cp images/"+str(w["id"])+" ../server/image/"+str(newId))
