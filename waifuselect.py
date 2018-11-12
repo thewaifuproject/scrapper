@@ -1,7 +1,7 @@
-import json, os, hashlib
+import json, os, sha3
 
 def keccak256(k):
-    return int(hashlib.sha3_256(k.encode("utf-8")).hexdigest(), 16)
+    return int(sha3.keccak_256(k.encode()).hexdigest(), 16)
 
 waifus2select=450
 
