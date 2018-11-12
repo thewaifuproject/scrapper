@@ -9,7 +9,7 @@ waifus = json.loads(open("waifus.json").read())
 
 waifus=sorted(waifus, key=lambda w: w["likes"]+w["trash"])[-waifus2select:]
 
-waifus=random.shuffle(waifus)
+random.shuffle(waifus)
 
 os.system("rm ../server/image/*")
 for i, w in enumerate(waifus):
