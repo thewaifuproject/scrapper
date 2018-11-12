@@ -6,8 +6,8 @@ waifus = json.loads(open("waifus.json").read())
 
 waifus=sorted(waifus, key=lambda w: w["likes"]+w["trash"])[:waifus2select]
 
-open("final/waifus.json").write(json.dumps(waifus))
+open("final/waifus.json", "w+").write(json.dumps(waifus))
 
 for w in waifus:
-    imageName=w["id"]
+    imageName=str(w["id"])
     os.system("mv images/"+imageName+" ../server/image/"+imageName)
