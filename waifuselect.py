@@ -1,7 +1,4 @@
-import json, os, sha3, random
-
-def keccak256(k):
-    return int(sha3.keccak_256(k.encode()).hexdigest(), 16)
+import json, os, random
 
 waifus2select=450
 
@@ -13,7 +10,7 @@ random.shuffle(waifus)
 
 os.system("rm ../server/image/*")
 for i, w in enumerate(waifus):
-    newId=keccak256(w["name"])
+    newId=i
     os.system("cp images/"+str(w["id"])+" ../server/image/"+str(newId))
     waifus[i]["id"]=newId
     waifus[i]["display_picture"]="https://api.waifuchain.moe/image/"+str(newId)
