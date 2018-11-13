@@ -19,13 +19,3 @@ for i, w in enumerate(waifus):
     waifus[i]["display_picture"]="https://api.waifuchain.moe/image/"+str(newId)
 
 open("final/waifus.json", "w+").write(json.dumps(waifus))
-
-waifuNames="pragma solidity ^0.4.24;\n\
-\n\
-contract WaifuNames{\n\
-	//Total: 450 waifus\n\
-        string[] waifusNames="+str(map(lambda w: w["name"].encode("utf-8"), waifus))+";\n\
-}"
-
-open("../contract/WaifuNames.sol", "w+").write(waifuNames)
-
