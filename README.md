@@ -8,6 +8,7 @@ pip install -r requirements.txt
 # Use
 ```
 python scrapper.py #Obtain all waifu data
+python normalize.py #Normalize image filenames
 python waifuselect.py #Select best waifus and prepare the data
 python createdb.py #Put all the data in an SQL database
 ```
